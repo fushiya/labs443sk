@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab1</title>
+</head>
+<body>
+    <form name="decryptForm">
+        <input type="radio" name="crypt">
+        <button onclick="filetext()">Текст з файлу</button>
+        <input type="text" name="key" placeholder="key">
+        <textarea name="textencrypt" id="textencrypt" cols="30" rows="10"></textarea>
+        <input type="submit" value="Decrypt">
+    </form>
+    <textarea name="textdecrypt" id="textdecrypt" cols="30" rows="10"></textarea>
+<script src="jquery-3.4.1.js"></script>
+<script>
+
+    $('form[name="decryptForm"]').submit((e) => {
+        e.preventDefault();
+        let text = $("#textencrypt").val();
+        let radiocrypt = $('input[name="crypt"]').is(':checked');
+        let cryptkey = $('input[name="key"]').val();
+        console.log([text, radiocrypt, cryptkey]);
+        $.ajax({
+            url: "post/decrypt",
+            contentType: "application/json",
+            method: "POST",
+            data: JSON.stringify({
+                textEncrypt: text,
+                crypt: radiocrypt,
+                key: cryptkey
+            }),
+            success: (decrypt) => {
+                document.querySelector("#textdecrypt").value = decrypt;
+            }
+        });
+    })
+
+</script>
+</body>
+</html>

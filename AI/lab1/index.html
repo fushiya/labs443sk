@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab1</title>
+    <style>
+        .game-box {
+            padding: 0;
+            width: 270px;
+            height: 270px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            outline: 1px solid blue;
+            box-sizing: content-box;
+        }
+
+        .game-box::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .game-cell {
+            outline: 1px solid black;
+            width: 30px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        /* .game-block {
+            outline: 1px solid blue;
+            width: 90px;
+            height: 90px;
+            float: left;
+        } */
+
+        .constant {
+            background-color: red;
+        }
+
+        .numb {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="main_setSudokuTable(20)">New Game</button>
+    <button onclick="main_ai()">Find Errors</button> <br>
+    <button onclick="main_player()">Player</button>
+
+    <div class="game-box"></div>
+
+<script src="setSudokuTable.js"></script>
+<script src="player.js"></script>
+<script src="ai.js"></script>
+</body>
+</html>
