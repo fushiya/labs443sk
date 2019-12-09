@@ -10,7 +10,31 @@
     
 <script src="jquery-3.4.1.js"></script>
 <script>
+    let text = "abc",
+    binaryLetters = [];
+
+    text.split('').forEach((letter) => {
+        let bin = letter.charCodeAt( 0 ).toString( 2 ),
+            padding = 8 - bin.length;
+        binaryLetters.push( new Array( padding+1 ).join( '0' ) + bin );
+    });
+
+    console.log(binaryLetters);
+
+    let binaryKeyIP = [0,1,2,3,4,5,6,7];
+    binaryKeyIP.sort(() => Math.random() - 0.5 );
     
+    console.log(binaryKeyIP);
+
+    let IP = [];
+    for (let i=0; i<binaryLetters.length; i++) {
+        IP[i] = [];
+        for (let j=0; j<binaryLetters[i].length; j++) {
+            IP[i][j] = binaryLetters[i][binaryKeyIP.indexOf(j)];
+        }
+    }
+    
+    console.log(IP);
 </script>
 </body>
 </html>
