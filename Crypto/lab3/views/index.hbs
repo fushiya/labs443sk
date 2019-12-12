@@ -5,12 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lab4</title>
+    <style>
+
+        * {
+            outline: none;
+        }
+
+        span[name="main-panel"] {
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        textarea {
+            width: 400px;
+            height: 180px;
+        }
+
+        input {
+            width: 80px;
+            padding: 1%;
+        }
+
+    </style>
 </head>
 <body>
+
+    <form action="upload" name="load-file" enctype="multipart/form-data">
+        <input type="submit" value="Завантажити файл" style="width:130px; padding: 1px">
+    </form>
     
+    <span name="main-panel"></form>
+        <label for="p">p</label>
+        <input type="number" name="p" value="3">
+
+        <label for="q">q</label>
+        <input type="number" name="q" value="11">
+
+        <label for="e">e=</label>
+        <input type="number" name="e" value="7">
+
+        <br><br>
+        <label for="n">n=</label>
+        <input type="number" disabled name="n">
+        <label for="d">d=</label>
+        <input type="number" name="d" disabled>
+
+        <br> <br>
+
+        <textarea name="inputText" id="inputText"></textarea>
+        
+        <div style="margin: 10px 0" display="inline-block">
+            <button onclick="encrypto(document.querySelector('#inputText'))">Шифрувати</button>
+            <button onclick="decrypto(document.querySelector('#inputText'))">Розшифрувати</button>
+        </div>
+    </span>
+
 <script src="jquery-3.4.1.js"></script>
+<script src="crypto.js"></script>
 <script>
-    
+    $('form[name="load-file"]').submit((e) => {
+        e.preventDefault();
+        $.ajax({
+            url: "/upload",
+            contentType: "application/json",
+            method: "POST",
+            data: JSON.stringify({}),
+            success: (parseText) => {
+                $('#inputText').text(parseText);
+            }
+        });
+    });
+
+    let inputs = {
+        p: document.querySelector('input[name="p"]'),
+        q: document.querySelector('input[name="q"]'),
+        n: document.querySelector('input[name="n"]'),
+        e: document.querySelector('input[name="e"]'),
+        d: document.querySelector('input[name="d"]')
+    }
+
+    inputs.p.oninput = (e) => {
+        inputs.n.value = +inputs.p.value * +inputs.q.value;
+        inputs.d.value = (+inputs.p.value-1) * (+inputs.q.value-1);
+    }
+
+    inputs.q.oninput = (e) => {
+        inputs.n.value = +inputs.p.value * +inputs.q.value;
+        inputs.d.value = (+inputs.p.value-1) * (+inputs.q.value-1);
+    }
+
 </script>
 </body>
 </html>

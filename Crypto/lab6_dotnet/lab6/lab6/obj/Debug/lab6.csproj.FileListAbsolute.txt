@@ -1,0 +1,10 @@
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\bin\Debug\lab6.exe.config
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\bin\Debug\lab6.exe
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\bin\Debug\lab6.pdb
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.csprojAssemblyReference.cache
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.Properties.Resources.resources
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.csproj.GenerateResource.cache
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.csproj.CoreCompileInputs.cache
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.exe
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.pdb
+D:\Learn\labs443sk1s\Crypto\lab6_dotnet\lab6\lab6\obj\Debug\lab6.Form1.resources
